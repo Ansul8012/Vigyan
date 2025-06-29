@@ -27,12 +27,15 @@ export function useVoiceCommand() {
       const transcript = event.results[event.results.length - 1][0].transcript
         .trim()
         .toLowerCase()
+
       console.log('🎤 You said:', transcript)
 
       if (transcript.includes('register')) {
         router.push('/register')
       } else if (transcript.includes('login')) {
         router.push('/login')
+      } else if (transcript.includes('assist')) {
+        router.push('/assist')
       }
     }
 
